@@ -1,18 +1,25 @@
-.navbar {  display: flex;
+.navbar {
+  display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px 10%;
   color: #ddd;
   border-bottom: 2px solid #3c3c3c;
 }
+
 .navbar .logo {
-  width: max(12vw, 120px);
+  width: max(12vw, 120px); /* Adjust the width of the logo */
+  background-color: #f0f0f0; /* Change this to any background color you prefer */
+  border-radius: 10px; /* Rounds the corners of the logo */
+  padding: 5px; /* Adds spacing around the logo */
 }
+
 .navbar ul {
   display: flex;
   gap: 45px;
   list-style: none;
 }
+
 .navbar li {
   cursor: pointer;
   transition: 0.3s;
@@ -20,8 +27,9 @@
 
 .navbar li:hover {
   color: #fff;
-  transform: translateY(2px);
+  transform: translateY(2px); /* Adds a small hover effect */
 }
+
 .nav-right {
   display: flex;
   align-items: center;
@@ -41,6 +49,23 @@
   color: #fff;
 }
 
+.navbar .logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Adjust the spacing between icon and text */
+}
+
+.navbar .logo-container .trade-icon {
+  color: #fff; /* Color of the trade icon */
+  font-size: 30px; /* Adjust the size of the trade icon */
+}
+
+.navbar .logo-container .logo-text {
+  font-size: 24px; /* Adjust the font size of the logo text */
+  color: #fff; 
+  font-weight: 500;/* Color of the logo text */
+}
+
 .navbar Link {
   display: flex;
   align-items: center;
@@ -54,6 +79,7 @@
   border: none;
   cursor: pointer;
 }
+
 .navbar button img {
   width: 13px;
 }
@@ -74,7 +100,7 @@
     padding: 20px 5%;
   }
   .navbar ul {
-    display: none;
+    display: none; /* Hide the navbar links on smaller screens */
   }
   .navbar button img {
     width: 12px;
@@ -83,6 +109,6 @@
 
 @media (max-width: 368px) {
   .navbar button {
-    display: none;
+    display: none; /* Hide buttons for the smallest screens */
   }
 }

@@ -1,0 +1,36 @@
+.get-started-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f4f8;
+  }
+  
+  .crypto-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .crypto-icon {
+    font-size: 50px;
+    color: #ff9900; /* Bitcoin color */
+  }
+  
+  .get-started-button {
+    background-color: #1e90ff;
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .get-started-button:hover {
+    background-color: #006bb3;
+  }
+  
