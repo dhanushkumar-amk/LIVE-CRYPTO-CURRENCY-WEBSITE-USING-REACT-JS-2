@@ -1,5 +1,5 @@
-import jwt from 'jsonwebtoken';import bcrypt from 'bcryptjs';
-
+import jwt from 'jsonwebtoken';
+import bcrypt from 'bcryptjs';
 import validator from 'validator';
 import userModel from'../Models/UserModel.js';
 
@@ -56,7 +56,8 @@ const registerUser = async (req, res) => {
     // hashing user password
     const salt = await bcrypt.genSalt(10); // the more no. round the more time it will take
     const hashedPassword = await bcrypt.hash(password, salt);
-
+      
+    // create a new user
     const newUser = new userModel({name, email, password: hashedPassword});
     const user = await newUser.save();
     const token = createToken(user._id);

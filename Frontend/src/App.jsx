@@ -6,6 +6,13 @@ import Footer from './components/Footer/Footer';
 import Login from './components/Login/Login';
 import { useState } from 'react';
 import GetStarted from './pages/GetStarted/GetStarted';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; // Import styles
+import Contact from './pages/Discussion/Contact';
+import CoinData from './pages/Coindata/CoinData';
+import Profile from './pages/ProfilePage/Profile';
+import WatchList from './pages/WatchList/WatchList';
+
 
 const App = () => {
   
@@ -13,8 +20,8 @@ const App = () => {
   
   return (
     <>
+      <ToastContainer/>
     {showLogin ? <Login setShowLogin={setShowLogin} /> : <></>}
-    
     <div className='app'>
       <Navbar setShowLogin={setShowLogin} />
       <Routes>
@@ -26,6 +33,23 @@ const App = () => {
           path='/home'
           element={<Home/>}
         />
+        
+        <Route
+          path='/contact'
+          element={<Contact/>}
+        />
+        
+        <Route
+          path='/profile'
+          element={<Profile/>}
+        />
+        
+        <Route path='/coinsData'
+        element={<CoinData/>}
+        />
+        <Route path='/watchList'
+        element={<WatchList/>}
+        />
         <Route
           path='/coin/:coinId'
           element={<Coin />}
@@ -33,6 +57,7 @@ const App = () => {
       </Routes>
       <Footer />
     </div>
+  
     </>
   );
 };

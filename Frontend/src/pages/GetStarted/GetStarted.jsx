@@ -1,13 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FaBitcoin, FaEthereum } from 'react-icons/fa'; // FaLitecoin is not available, so removed it
-import { SiLitecoin } from 'react-icons/si'; // Import Litecoin from Simple Icons
+import { FaBitcoin, FaEthereum } from 'react-icons/fa';
+import { SiLitecoin } from 'react-icons/si';
+import { toast } from 'react-toastify';
+import { CoinContext } from '../../context/coinContext';
+import './GetStarted.css';
 
 const GetStarted = () => {
   const navigate = useNavigate();
+  const { token } = useContext(CoinContext);
 
   const handleClick = () => {
-    navigate('/home'); // Redirects to the home page
+    if (token) {
+      navigate('/home');
+    } else {
+      toast.error('Please login to continue');
+    }
   };
 
   return (
@@ -17,6 +25,9 @@ const GetStarted = () => {
         <FaEthereum className="crypto-icon" />
         <SiLitecoin className="crypto-icon" />
       </div>
+      <p className="crypto-info">
+        Welcome to the world of cryptocurrencies! Explore Bitcoin, Ethereum, and Litecoin—three of the most popular digital currencies. Learn how they work and start your journey in the exciting crypto market.
+      </p>
       <button className="get-started-button" onClick={handleClick}>
         Get Started
       </button>

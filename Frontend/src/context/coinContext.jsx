@@ -1,4 +1,6 @@
-import {createContext, useEffect, useState} from 'react';export const CoinContext = createContext();
+import { createContext, useEffect, useState } from 'react';
+
+export const CoinContext = createContext(null);
 
 const CoinContextProvider = (props) => {
   const [allCoin, setAllCoin] = useState([]);
@@ -6,6 +8,9 @@ const CoinContextProvider = (props) => {
     name: 'usd',
     symbol: '$',
   });
+  const [token, setToken] = useState("");
+
+  const url = "http://localhost:4000";
 
   const fetchAllCoin = async () => {
     const options = {
@@ -29,10 +34,18 @@ const CoinContextProvider = (props) => {
     fetchAllCoin();
   }, [currency]);
 
+  useEffect(() => {
+    // Store token in local storage
+    localStorage.setItem('token', token);
+  }, [token]);
+
   const contextValue = {
     allCoin,
     currency,
     setCurrency,
+    url,
+    token,
+    setToken,
   };
 
   return (

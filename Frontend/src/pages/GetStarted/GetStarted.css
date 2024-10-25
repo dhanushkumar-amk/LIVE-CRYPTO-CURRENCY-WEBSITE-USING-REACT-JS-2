@@ -1,36 +1,51 @@
 .get-started-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f4f8;
-  }
-  
-  .crypto-icons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 30px;
-  }
-  
-  .crypto-icon {
-    font-size: 50px;
-    color: #ff9900; /* Bitcoin color */
-  }
-  
-  .get-started-button {
-    background-color: #1e90ff;
-    color: white;
-    padding: 15px 30px;
-    font-size: 18px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .get-started-button:hover {
-    background-color: #006bb3;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Full viewport height */
+  background-color:transparent; /* Light background color for contrast */
+  text-align: center; /* Center text */
+  padding: 20px;
+}
+
+.crypto-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between icons */
+  margin-bottom: 30px; /* Space below the icons */
+}
+
+.crypto-icon {
+  font-size: 50px; /* Size of the icons */
+  color: #fff; /* Dark color for the icons */
+  transition: transform 0.3s; /* Smooth scale effect */
+}
+
+.crypto-icon:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.crypto-info {
+  font-size: 18px; /* Font size for info text */
+  color: #fff; /* Darker color for readability */
+  margin: 50px; 
+  width: 50%;/* Space below the info text */
+  padding: 0 20px; /* Add some padding on the sides */
+}
+
+.get-started-button {
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #fff;
+  background: #7927ff; 
+  font-size: 16px;/* Smooth transitions */
+  transition: .4s ease;
+}
+
+.get-started-button:hover {
+  background-color:#5c05e7 ; /* Darker blue on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}

@@ -83,7 +83,7 @@ const Coin = () => {
         <div className='coin-info'>
           <ul>
             <li>Crypto Market Rank </li>
-            <li>{coinData.market_cap_rank}</li>
+            <li className='coin-coin'>{coinData.market_cap_rank}</li>
           </ul>
           <ul>
             <li>Current Price </li>
@@ -94,7 +94,7 @@ const Coin = () => {
           </ul>
           <ul>
             <li>Market Cap </li>
-            <li>
+            <li >
               {currency.symbol}{' '}
               {coinData.market_data.market_cap[currency.name]?.toLocaleString()}
             </li>
@@ -119,23 +119,9 @@ const Coin = () => {
               {coinData.market_data.price_change_percentage_24h?.toFixed(2)}%
             </li>
           </ul>
-          {/* <ul>
-            <li>All-Time High </li>
-            <li>
-              {currency.symbol}{' '}
-              {coinData.market_data.ath[currency.name]?.toLocaleString()}
-            </li>
-          </ul> */}
-          {/* <ul>
-            <li>All-Time Low </li>
-            <li>
-              {currency.symbol}{' '}
-              {coinData.market_data.atl[currency.name]?.toLocaleString()}
-            </li>
-          </ul> */}
           <ul>
             <li>Trading Volume (24h) </li>
-            <li>
+            <li >
               {currency.symbol}{' '}
               {coinData.market_data.total_volume[currency.name]?.toLocaleString()}
             </li>

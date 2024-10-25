@@ -40,6 +40,9 @@
     padding: 12px;
     border-radius: 6px;
     font-size: 14px;
+    color: black  !important;
+    background: transparent;
+    
   }
   
   .login-popup-container button {

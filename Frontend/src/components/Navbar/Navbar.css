@@ -7,11 +7,33 @@
   border-bottom: 2px solid #3c3c3c;
 }
 
+.navbar .logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Adjust the spacing between icon and text */
+}
+
 .navbar .logo {
   width: max(12vw, 120px); /* Adjust the width of the logo */
-  background-color: #f0f0f0; /* Change this to any background color you prefer */
-  border-radius: 10px; /* Rounds the corners of the logo */
-  padding: 5px; /* Adds spacing around the logo */
+  background-color: #f0f0f0; /* Background color */
+  border-radius: 10px; /* Rounded corners */
+  padding: 5px; /* Spacing around the logo */
+  display: flex; /* Ensure it can contain both icon and text */
+  align-items: center; 
+  margin-top: 10px;
+}
+
+.navbar .trade-icon {
+  color: #fff; /* Color of the trade icon */
+  font-size: 30px;
+ /* Size of the trade icon */
+}
+
+.navbar .logo-text {
+  font-size: 24px; /* Font size of the logo text */
+  color: #fff;
+  font-weight: 500;
+  margin-top: 15px; /* Weight of the logo text */
 }
 
 .navbar ul {
@@ -27,7 +49,7 @@
 
 .navbar li:hover {
   color: #fff;
-  transform: translateY(2px); /* Adds a small hover effect */
+  transform: translateY(2px); /* Small hover effect */
 }
 
 .nav-right {
@@ -49,66 +71,55 @@
   color: #fff;
 }
 
-.navbar .logo-container {
+/* Button styles */
+.navbar .sign-in-button {
   display: flex;
   align-items: center;
-  gap: 10px; /* Adjust the spacing between icon and text */
-}
-
-.navbar .logo-container .trade-icon {
-  color: #fff; /* Color of the trade icon */
-  font-size: 30px; /* Adjust the size of the trade icon */
-}
-
-.navbar .logo-container .logo-text {
-  font-size: 24px; /* Adjust the font size of the logo text */
-  color: #fff; 
-  font-weight: 500;/* Color of the logo text */
-}
-
-.navbar Link {
-  display: flex;
-  align-items: center;
-  gap: 10px;
   padding: 10px 25px;
-  border-radius: 20px;
-  font-size: 15px;
-  font-weight: 500;
-  color: #393939;
-  background: white;
-  border: none;
+  background-color: transparent;
+  color: #fff;
+  border-radius: 30px;
+  border: 2px solid #6f0adb;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease;
   cursor: pointer;
 }
 
-.navbar button img {
-  width: 13px;
+.navbar .sign-in-button:hover {
+  transform: translateY(-2px); /* Lifting effect on hover */
 }
 
-@media (max-width: 900px) {
-  .navbar {
-    padding: 20px 8%;
-  }
-  .navbar button {
-    gap: 8px;
-    padding: 8px 18px;
-    font-size: 14px;
-  }
+.navbar .user-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  background-color: #3c3c3c;
+  color: #ddd;
+  border-radius: 50%;
+  transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
 }
 
-@media (max-width: 768px) {
-  .navbar {
-    padding: 20px 5%;
-  }
-  .navbar ul {
-    display: none; /* Hide the navbar links on smaller screens */
-  }
-  .navbar button img {
-    width: 12px;
-  }
+.navbar .user-icon:hover {
+  background-color: #6f0adb;
+  color: #fff; /* Change color on hover */
 }
 
-@media (max-width: 368px) {
-  .navbar button {
-    display: none; /* Hide buttons for the smallest screens */
-  }
+/* Dropdown styles */
+.navbar-profile {
+  position: relative;
+}
+
+.nav-profile-dropdown li {
+  position: absolute;
+  display: none;
+  right: 0; /* Align to the right */
+  z-index: 1;
+}
+
+.navbar-profile:hover .nav-profile-dropdown li {
+  display: flex;
 }
